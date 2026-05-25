@@ -1,0 +1,31 @@
+[proxy]
+listen_host = "127.0.0.1"
+listen_port = 4097
+vllm_host = "127.0.0.1"
+vllm_port = 8000
+
+[watcher]
+base_url = "http://localhost:4096"
+settle_delay = 2
+settle_delay_post_compaction = 10
+compaction_window = 30
+
+[logging]
+verbose = false
+
+[policies]
+system_prompts = [
+  '''<tdd-policy>
+When writing new code or implementing features, use test-driven development:
+write a failing test first, then implement minimal code to pass. One test at a time.
+
+Skip TDD only for: configuration changes, trivial one-liners, documentation,
+refactoring existing tested code, or when the user explicitly says so.
+</tdd-policy>''',
+
+  '''<plan-mode-policy>
+Before making decisions to write or edit files, consider whether you may be in
+a planning or brainstorming mode based on conversational context. When
+in doubt, ask for clarification on desired actions.
+</plan-mode-policy>''',
+]

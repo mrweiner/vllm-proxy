@@ -65,15 +65,15 @@ def should_continue(status, msgs):
 
 
 _INTENT_PATTERNS = [
-    r"(?i)\blet\s+me\s+(now\s+)?(check|look|run|fix|update|investigate|search|review|verify|explore|dig|trace)\b",
+    r"(?i)\blet\s+me\s+(now\s+)?\w+",
     r"(?i)\bi\s+need\s+to\b",
     r"(?i)\bi\s+want\s+to\b",
     r"(?i)\bi\s+should\s+\w+",
     r"(?i)\bi['']m\s+going\s+to\b",
-    r"(?i)\bi\s+will\s+.*\b(update|fix|check|run|add|change|review|handle|resolve)\b",
+    r"(?i)\bi\s+will\s+",
     r"(?i)\bnext,?\s+i['']\s*ll\b",
     r"(?i)\bnext\s+steps?",
-    r"(?i)\bareas?\s+to\s+(review|check|address|fix)",
+    r"(?i)\bareas?\s+to\s+\w+",
     r"(?i)\btodo\b",
 ]
 
